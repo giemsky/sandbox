@@ -1,0 +1,26 @@
+<h1>New Order</h1>
+
+<%= form_tag({controller: "orders", action: "create"}, method: "post") do %>
+  <div class="form-group">
+    <%= label_tag 'Source Text' %>
+    <%= text_area_tag :source_text, nil, class: 'form-control', rows: 6  %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'Source Language' %>
+    <%= select_tag :source_language_id, options_from_collection_for_select(@languages, :id, :name), class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'Target Language' %>
+    <%= select_tag :target_language_id, options_from_collection_for_select(@languages, :id, :name), class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'Comments' %>
+    <%= text_area_tag :comments, nil, class: 'form-control', rows: 4 %>
+  </div>
+
+  <%= submit_tag("Submit order", class: "btn btn-primary") %>
+  <%= link_to 'Back', orders_path, class: "btn btn-default" %>
+<% end %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jobs</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Number</th>
+    <th>Source Language</th>
+    <th>Target Language</th>
+    <th>Revenue</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @jobs.each do |job| %>
+    <tr>
+      <td><%= link_to job.number, job_path(job) %></td>
+      <td><%= job.source_language %></td>
+      <td><%= job.target_language %></td>
+      <td><%= job.revenue %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

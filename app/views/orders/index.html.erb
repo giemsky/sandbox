@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Orders</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Source Language</th>
+      <th>Target Language</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= link_to order.number, order_path(order) %></td>
+        <td><%= order.source_language_name %></td>
+        <td><%= order.target_language_name %></td>
+        <td><%= order.state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path, class: "btn btn-primary" %>
