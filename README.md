@@ -1,1 +1,1 @@
-# CQRS sandbox app
+# Sandbox app
